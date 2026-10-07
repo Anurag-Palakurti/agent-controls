@@ -1,0 +1,10 @@
+{
+  "_note": "Fake sanctions list. 'Alleghany Steel Supply' is a deliberate near match of the approved vendor 'Allegheny Steel Supply' (one letter different). The built-in check B2 only blocks EXACT matches. Near matches are escalated to a human by the unusual payment check F1 (plain code, similarity 0.85 or more).",
+  "names": [
+    "Volkov Trading House",
+    "Crimson Harbor Shipping",
+    "Northwind Metals FZE",
+    "Golden Meridian Exchange",
+    "Alleghany Steel Supply"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "_note": "Fake vendors. Account numbers start with SIM- so they can never be mistaken for real ones.",
+  "vendors": [
+    {"name": "Allegheny Steel Supply", "status": "approved", "account_number": "SIM-1001-4521", "date_added": "2023-03-14", "typical_invoice": "45000.00", "payment_frequency": "monthly"},
+    {"name": "Keystone Industrial Gases", "status": "approved", "account_number": "SIM-1002-7710", "date_added": "2021-06-01", "typical_invoice": "8500.00", "payment_frequency": "weekly"},
+    {"name": "Three Rivers Freight", "status": "approved", "account_number": "SIM-1003-3392", "date_added": "2022-01-10", "typical_invoice": "15000.00", "payment_frequency": "weekly"},
+    {"name": "Susquehanna Tooling", "status": "approved", "account_number": "SIM-1004-8845", "date_added": "2020-09-22", "typical_invoice": "22000.00", "payment_frequency": "monthly"},
+    {"name": "Penn Valley Electric", "status": "approved", "account_number": "SIM-1005-1267", "date_added": "2019-05-01", "typical_invoice": "12000.00", "payment_frequency": "monthly"},
+    {"name": "Laurel Ridge Packaging", "status": "approved", "account_number": "SIM-1006-5530", "date_added": "2024-02-18", "typical_invoice": "9800.00", "payment_frequency": "monthly"},
+    {"name": "Brightline Safety Equipment", "status": "approved", "account_number": "SIM-1007-9014", "date_added": "2025-07-07", "typical_invoice": "6200.00", "payment_frequency": "quarterly"},
+    {"name": "Northgate Machine Works", "status": "approved", "account_number": "SIM-1008-2276", "date_added": "2026-10-03", "typical_invoice": "30000.00", "payment_frequency": "monthly"},
+
+    {"name": "Quickship Logistics LLC", "status": "not_approved", "account_number": "SIM-2001-6618", "date_added": "2026-09-15", "typical_invoice": "5000.00", "payment_frequency": "monthly"},
+    {"name": "Delmont Metals Trading", "status": "not_approved", "account_number": "SIM-2002-4403", "date_added": "2026-08-02", "typical_invoice": "70000.00", "payment_frequency": "quarterly"},
+    {"name": "Apex Consulting Partners", "status": "not_approved", "account_number": "SIM-2003-9951", "date_added": "2026-07-20", "typical_invoice": "18000.00", "payment_frequency": "monthly"}
+  ]
+}

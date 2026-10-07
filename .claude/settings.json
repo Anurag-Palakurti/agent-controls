@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(crash_lab/expected/**)",
+      "Write(crash_lab/expected/**)",
+      "Bash(*crash_lab/expected*)",
+      "PowerShell(*crash_lab/expected*)",
+      "Bash(*crash_lab\\expected*)",
+      "PowerShell(*crash_lab\\expected*)"
+    ]
+  }
+}

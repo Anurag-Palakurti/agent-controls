@@ -1,0 +1,10 @@
+{
+  "_note": "Made-up company for the simulation. No real money or banks. Account minimums are NOT stored here: they are human-approved policy rules 2.1-2.3 in policies.json, so there is only one place to change them.",
+  "company_name": "Keystone Fabrication Co.",
+  "simulated_today": "2026-10-04",
+  "accounts": {
+    "Operating": {"starting_balance": "3500000.00"},
+    "Payroll": {"starting_balance": "800000.00"},
+    "Reserve": {"starting_balance": "5000000.00"}
+  }
+}

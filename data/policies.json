@@ -1,0 +1,55 @@
+{
+  "_note": "Starting policy rules, written by hand. Built-in rules B1 (no overdraft) and B2 (sanctions) live in guardrail/rules.py, not here, so users cannot edit or remove them.",
+  "policy_version": "1",
+  "rules": [
+    {"id": "1.1", "version": 1, "type": "amount_limit",
+     "text": "Payments over $250,000 need approval.",
+     "settings": {"max_amount": "250000.00"},
+     "action": "ESCALATE", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "2.1", "version": 1, "type": "minimum_balance",
+     "text": "The Operating account can't go below $2,000,000.",
+     "settings": {"account": "Operating", "minimum": "2000000.00"},
+     "action": "BLOCK", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "2.2", "version": 1, "type": "minimum_balance",
+     "text": "The Payroll account can't go below $500,000.",
+     "settings": {"account": "Payroll", "minimum": "500000.00"},
+     "action": "BLOCK", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "2.3", "version": 1, "type": "minimum_balance",
+     "text": "The Reserve account can't go below $1,000,000.",
+     "settings": {"account": "Reserve", "minimum": "1000000.00"},
+     "action": "BLOCK", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "3.1", "version": 1, "type": "approved_vendors_only",
+     "text": "Only pay approved vendors.",
+     "settings": {},
+     "action": "BLOCK", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "3.2", "version": 1, "type": "vendor_account_match",
+     "text": "Only pay a vendor at the bank account we have on file for them.",
+     "settings": {},
+     "action": "BLOCK", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "4.1", "version": 1, "type": "new_vendor_limit",
+     "text": "Payments over $25,000 to vendors added less than 7 days ago need approval.",
+     "settings": {"days": 7, "max_amount": "25000.00"},
+     "action": "ESCALATE", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "5.1", "version": 1, "type": "rolling_24h_total",
+     "text": "If one agent's payments add up to more than $250,000 in 24 hours, they need approval.",
+     "settings": {"max_total": "250000.00"},
+     "action": "ESCALATE", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "6.1", "version": 1, "type": "duplicate_invoice",
+     "text": "Duplicate invoices are blocked.",
+     "settings": {},
+     "action": "BLOCK", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"},
+
+    {"id": "7.1", "version": 1, "type": "internal_transfer_limit",
+     "text": "Transfers between our own accounts are allowed up to $500,000 if each account stays above its minimum.",
+     "settings": {"max_amount": "500000.00"},
+     "action": "ESCALATE", "approved_by": "Anurag Palakurti", "approved_at": "2026-10-04T08:00:00"}
+  ]
+}

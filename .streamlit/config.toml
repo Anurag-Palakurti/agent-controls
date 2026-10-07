@@ -1,0 +1,41 @@
+# The app's look: a clean bank-console style. Navy and white, one teal accent,
+# and the same three decision colors everywhere:
+#   allowed = green, needs approval = amber (Streamlit's "orange"), blocked = red.
+# If the demo machine is offline, the Google font falls back to the default sans-serif.
+
+[theme]
+base = "light"
+primaryColor = "#0B2A5B"              # navy: primary buttons, active widgets
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F3F6FA"  # light blue-gray for cards and inputs
+textColor = "#14213D"
+linkColor = "#0F766E"                 # the one accent color (teal)
+linkUnderline = false
+borderColor = "#D6DEE8"
+showWidgetBorder = true
+baseRadius = "6px"
+buttonRadius = "6px"
+
+font = "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+headingFont = "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap"
+baseFontSize = 15
+headingFontSizes = ["30px", "22px", "18px", "16px", "14px", "12px"]
+headingFontWeights = [700, 600, 600, 600, 500, 500]
+
+# Decision colors (used by the badges and colored text on every page)
+greenColor = "#15803D"                # allowed
+orangeColor = "#B45309"               # needs approval (amber)
+redColor = "#B91C1C"                  # blocked
+blueColor = "#0B2A5B"
+grayColor = "#5B6B82"
+
+dataframeHeaderBackgroundColor = "#0B2A5B"
+dataframeHeaderTextColor = "#FFFFFF"
+dataframeBorderColor = "#D6DEE8"
+
+[theme.sidebar]
+backgroundColor = "#0B2A5B"
+secondaryBackgroundColor = "#16386F"
+textColor = "#FFFFFF"
+borderColor = "#2A4A80"
+primaryColor = "#5EEAD4"              # teal accent stands out on navy

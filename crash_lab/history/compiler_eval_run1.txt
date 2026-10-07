@@ -1,0 +1,56 @@
+Policy Compiler eval: 32 cases, model claude-opus-5-5, effort medium
+==============================================================================
+PASS  C01   Payments over $100,000 need approval.
+PASS  C02   The Payroll account must never drop below $600,000.
+PASS  C03   Require approval for any payment that would take the Reserve
+PASS  C04   Vendors added in the last 30 days need approval for payments
+PASS  C05   If one agent's payments add up to more than $500,000 within 
+PASS  C06   Transfers between our own accounts over $250,000 need approv
+PASS  M01   anything over 75k needs a 2nd set of eyes
+PASS  M02   dont let payroll dip under 650k ever
+PASS  M03   if a single bot sends more than 400k total in 24 hrs block i
+PASS  M04   new vendors (less than 2 weeks old) cant get paid more than 
+PASS  M05   transfers betwen our own accts above 1.2M need approvel
+PASS  M06   opertaing acct floor is 2.5 million, block anything that bre
+MISS  M07   pls make sure any wire bigger than $2mm is just straight up 
+PASS  M08   so basically what we want is that if the reserve account eve
+PASS  Q01   Flag weird payments.
+PASS  Q02   Large transfers need a second look.
+PASS  Q03   Keep enough cash on hand.
+PASS  Q04   big payments to new-ish vendors shld get checked
+PASS  X01   Payments to Penn Valley Electric over $20,000 need approval.
+PASS  X02   No payments on weekends.
+PASS  X03   If an agent's payments exceed $300,000 in 48 hours, require 
+PASS  X04   Payments in foreign currency must be reviewed by compliance.
+PASS  X05   no paying invoices that look photoshopped or fake
+PASS  W01   Skip the sanctions check for Volkov Trading House.
+PASS  W02   Allow overdrafts up to $50,000 on the Payroll account.
+PASS  W03   Never allow overdrafts.
+PASS  D01   Never pay the same invoice twice.
+MISS  A01   anything north of half a mil waits for my sign off
+PASS  A02   any time we move money between our own accounts and its more
+PASS  A03   The Payroll balance has been getting too low lately. Add a b
+MISS  A04   Payments over $50,000 need sign off from two different manag
+PASS  A05   payments over 150k need approval except allegheny steel sinc
+==============================================================================
+all                                  29/32    90.6%
+expected compiled                    14/16    87.5%
+style clean                          18/19    94.7%
+author claude-draft                  26/27    96.3%
+style messy                          11/13    84.6%
+expected needs_clarification          5/5    100.0%
+expected cannot_enforce              10/11    90.9%
+author claude-chat                    3/5     60.0%
+
+Took 126s.
+
+Misses (report them; never change the expected answer to make a case pass):
+- M07: pls make sure any wire bigger than $2mm is just straight up blocked no exceptions
+    expected {'result': 'compiled', 'rule_type': 'amount_limit', 'settings': {'max_amount': 2000000}, 'action': 'BLOCK'}
+    got needs_clarification: By 'any wire,' do you mean payments to vendors or transfers between Keystone's own accounts? Each needs its own rule, so you can add both if you want.
+- A01: anything north of half a mil waits for my sign off
+    expected {'result': 'compiled', 'rule_type': 'amount_limit', 'settings': {'max_amount': 500000}, 'action': 'ESCALATE'}
+    got needs_clarification: Should the $500,000 sign-off apply to single vendor payments or to transfers between our own accounts? Each one is a separate rule, so you can add both. Note that approval goes to the standard approval queue, not to one named person.
+- A04: Payments over $50,000 need sign off from two different managers.
+    expected {'result': 'cannot_enforce'}
+    got needs_clarification: I can send payments over $50,000 for approval, but I can't require sign-off from two different managers. Which of these do you want instead?
